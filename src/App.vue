@@ -2,6 +2,12 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="menu">
+      <router-link to="/home" tag="button">Home</router-link>
+      <router-link to="/donation" tag="button">Donation</router-link>
+    </div>
+
+    <router-view></router-view>
   </div>
 </template>
 
