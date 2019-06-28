@@ -2,10 +2,10 @@
   <div id="donation">
     <h2 class="page-title">{{title}}</h2>
     <p>Hi {{user.name}}! Good to hear you want to better the world by donating trees to compensate the <b>{{getPollutionInKg}}kg</b> of CO2 pollution you created.</p>
-    <form class="donate-form" v-on:submit="submitDonation(donationAmount)">
+    <form class="donate-form" v-on:submit.prevent="submitDonation(donationAmount)">
       <label for="donation-input">Amount of trees:</label>
       <input type="number" name="donation-input" class="donation-input" v-model="donationAmount">
-      <button type="submit">Donate</button>
+      <b-button type="submit">Donate</b-button>
     </form>
   </div>
 </template>
@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     submitDonation: function(amount) {
+      alert(`Thank you for donating!`);
       console.log(amount);
     },
     getUser: function() {
