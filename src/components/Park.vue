@@ -1,8 +1,12 @@
-import Router from 'vue-router';
 <template>
   <div>
-    <span v-for="(value, name) in park.facilities"
-        v-bind:key="name" v-if="value">{{name}} </span>
+    <div v-for="(value, name) in park.facilities" v-bind:key="name" v-if="value">
+      <!-- <img :src="getImg(name)" alt> -->
+      <img v-if="name==='toilet'" src="../assets/toilet.png" alt>
+      <img v-if="name==='restaurant'" src="../assets/restaurant.jpg" alt>
+      <img v-if="name==='fountain'" src="../assets/fountain.png" alt>
+      <img v-if="name==='playground'" src="../assets/playground.jpg" alt>
+    </div>
     <img src="../assets/park.png" alt>
   </div>
 </template>
@@ -15,7 +19,11 @@ export default {
   data: () => {
     return {};
   },
-  methods: {},
+  methods: {
+    getImg(name) {
+      return "../assets/" + name + ".png";
+    }
+  },
   computed: {
     index() {
       return this.$route.params.id;
@@ -28,4 +36,8 @@ export default {
 </script>
 
 <style scoped>
+img {
+    width: 50px;
+    height: 50px;
+}
 </style>
