@@ -76,7 +76,7 @@ const parkModule = {
         creationDate: "06-28-2019",
         lastUpdated: "06-28-2019",
         facilities: {
-            toilet: true,
+            toilet: false,
             restaurant: true,
             playground: true,
             fountain: false
@@ -91,9 +91,9 @@ const parkModule = {
         lastUpdated: "06-28-2019",
         facilities: {
             toilet: true,
-            restaurant: true,
-            playground: true,
-            fountain: false
+            restaurant: false,
+            playground: false,
+            fountain: true
         }
     }]},
     mutations: {
@@ -103,7 +103,8 @@ const parkModule = {
     },
     actions: {},
     getters: {
-        parks: state => state.parks
+        parks: state => state.parks,
+        park: state => index => state.parks[index]
     }
 }
 
