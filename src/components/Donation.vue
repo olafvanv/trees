@@ -1,6 +1,6 @@
 <template>
   <div id="donation">
-    <p>Hi {{user.name}}! Good to hear you want to better the world by donating trees to compensate the <b>{{getPollutionInKg}}kg</b> of CO2 pollution you created.</p>
+    <p>Hi {{user.name}}! Good to hear you want to better the world by donating trees to compensate the <b>49kg</b> of CO2 pollution you created.</p>
     
     <div class="form">
     <form class="donate-form" v-on:submit.prevent="submitDonation(donationAmount)">
