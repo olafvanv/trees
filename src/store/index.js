@@ -1,41 +1,53 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import client from 'api-client'
 
 Vue.use(Vuex)
 
 const userModule = {
     state: {
-        id: "250025",
-        name: "Gabriel Moawad",
-        image: "base64",
-        mobilityConcept: {
-            distance: 899000,
-            pollution: 17600
-        },
-        egencia: {
-            flightDistance: 899000
-        },
-        plantedTrees: 3
-    },
-    mutations: {
-        setFlightDistance(state, distance) {
-            state.egencia.flightDistance = distance;
-        },
-        setMobilityDistance(state, distance) {
-            state.mobilityConcept.distance = distance;
-        },
-        setMobilityPollution(state, pollution) {
-            state.mobilityConcept.pollution = pollution;
+        user: {
+            id: "250025",
+            name: "Gabriel Moawad",
+            image: "base64",
+            mobilityConcept: {
+                distance: 899000,
+                pollution: 17600
+            },
+            egencia: {
+                flightDistance: 899000
+            },
+            plantedTrees: 3    
         }
     },
-    actions: {},
+    mutations: {
+        setUser(state, user) {
+            state.user = user
+        },
+        setFlightDistance(state, distance) {
+            state.user.egencia.flightDistance = distance;
+        },
+        setMobilityDistance(state, distance) {
+            state.user.mobilityConcept.distance = distance;
+        },
+        setMobilityPollution(state, pollution) {
+            state.user.mobilityConcept.pollution = pollution;
+        }
+    },
+    actions: {
+        fetchPosts ({commit}) {
+            return client
+            .fetchPosts()
+            .then(user => commit('setUser', user))
+        }
+    },
     getters: {
-        user: state => state,
-        flightDistance: state => state.egencia.flightDistance,
-        flightPollution: state => state.egencia.flightDistance * 115,
-        mobilityDistance: state => state.mobilityConcept.distance,
-        mobilityPollution: state => state.mobilityConcept.pollution,
-        plantedTrees: state => state.plantedTrees
+        user: state => state.user,
+        flightDistance: state => state.user.egencia.flightDistance,
+        flightPollution: state => state.user.egencia.flightDistance * 115,
+        mobilityDistance: state => state.user.mobilityConcept.distance,
+        mobilityPollution: state => state.user.mobilityConcept.pollution,
+        plantedTrees: state => state.user.plantedTrees
     }
 }
 
