@@ -10,12 +10,12 @@
 <script>
 import Park from './components/Park.vue'
 import ParkList from './components/ParkList.vue'
+import Donation from './components/Donation.vue'
 
 export default {
   name: 'app',
   components: {
-    Park,
-    ParkList
+    Donation
   }
 }
 </script>
