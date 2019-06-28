@@ -2,6 +2,7 @@
   <div id="app">
     <div class="menu">
       <router-link to="/donation" tag="button">Donation</router-link>
+      <router-link to="/stats" tag="button">Stats</router-link>
     </div>
     <router-view></router-view>
   </div>

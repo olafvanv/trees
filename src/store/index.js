@@ -15,7 +15,7 @@ const userModule = {
                 pollution: 17600
             },
             egencia: {
-                flightDistance: 899000
+                flightDistance: 200
             },
             plantedTrees: 3    
         }
