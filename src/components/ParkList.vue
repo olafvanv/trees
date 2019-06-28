@@ -1,9 +1,11 @@
 <template>
   <div>
     <ul>
-      <li v-on:click="goTo(index)" v-for="(park, index) in parks" :key="`park-${index}`">
-        {{park.name}}
-      </li>
+      <li
+        v-on:click="goTo(index)"
+        v-for="(park, index) in parks"
+        :key="`park-${index}`"
+      >{{park.name}}</li>
     </ul>
   </div>
 </template>
@@ -11,15 +13,15 @@
 
 <script lang="ts">
 import { store } from "../store";
+import Park from "./Park.vue";
 export default {
   name: "ParkList",
   data: () => {
-    return {
-    };
+    return {};
   },
   methods: {
     goTo(index) {
-      console.log(index);
+      this.$router.push({ name: "park", params: { id: index } });
     }
   },
   computed: {
