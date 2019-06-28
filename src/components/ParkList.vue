@@ -35,6 +35,7 @@ export default {
 <style lang="scss" scoped>
 ul {
   list-style: none;
+  padding: 0;
   li {
     cursor: pointer;
     &:hover {
