@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import client from 'api-client'
+// import client from 'api-client'
 
 Vue.use(Vuex)
 
