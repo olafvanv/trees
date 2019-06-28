@@ -1,6 +1,5 @@
 <template>
   <div id="donation">
-    <h2 class="page-title">{{title}}</h2>
     <p>Hi {{user.name}}! Good to hear you want to better the world by donating trees to compensate the <b>{{getPollutionInKg}}kg</b> of CO2 pollution you created.</p>
     
     <div class="form">
@@ -11,9 +10,9 @@
     </form>
     </div>
 
-    <div class="trees">
+    <div class="trees" v-if="donationAmount && parseInt(donationAmount) > 0">
       <h3>Trees:</h3>
-      <div class="tree-icons" v-if="donationAmount">
+      <div class="tree-icons" >
         <span v-for="index in parseInt(donationAmount)" v-bind:key="index">
           <img class="tree-icon" src="../assets/tree.svg">
         </span>
@@ -30,7 +29,6 @@ export default {
   name: "Donation",
   data: () => {
     return {
-      title: 'Donation',
       donationAmount: '0',
       user: null
     }
@@ -62,15 +60,28 @@ export default {
 #donation{
   background-color:#15596B;
   color:#fff;
+  p{
+    padding:0 15px;
+  }
   .form{
-    padding:20px 0;
+    padding:30px 0;
+    form{
+      max-width:95%;
+      margin:0 auto;
+      input{
+        margin:10px 0;
+      }
+      button{
+        width:100%;
+      }
+    }
   }
 }
 .trees{
   background-color:#00c37b;
   width:100%;
   margin:0;
-  padding:10px;
+  padding:30px 10px;
   box-sizing: border-box;
    img.tree-icon{
      width:20%;
