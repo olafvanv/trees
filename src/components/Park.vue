@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(value, name) in park.facilities" v-bind:key="name" v-if="value">
+    <div class="facilities" v-for="(value, name) in park.facilities" v-bind:key="name" v-if="value">
       <!-- <img :src="getImg(name)" alt> -->
       <img v-if="name==='toilet'" src="../assets/toilet.png" alt>
       <img v-if="name==='restaurant'" src="../assets/restaurant.jpg" alt>
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-img {
+.facilities img {
     width: 50px;
     height: 50px;
 }
