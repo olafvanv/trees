@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Park from './components/Park.vue';
-import ParkList from './components/ParkList.vue';
+import Park from './components/Park.vue'
+import ParkList from './components/ParkList.vue'
 
 export default {
   name: 'app',
