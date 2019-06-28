@@ -1,25 +1,31 @@
 <template>
   <div>
     <ul>
-      <li v-bind:key="park" v-for="park in parks" v-on:click="getParks">{{park}}</li>
+      <li v-on:click="goTo(index)" v-for="(park, index) in parks" :key="`park-${index}`">
+        {{park.name}}
+      </li>
     </ul>
   </div>
 </template>
 
 
 <script lang="ts">
+import { store } from "../store";
 export default {
   name: "ParkList",
   data: () => {
     return {
-      parks: ["1", "2", "1"]
     };
   },
   methods: {
-    getParks: function() {}
+    goTo(index) {
+      console.log(index);
+    }
   },
-  mounted: function() {
-    this.getParks();
+  computed: {
+    parks() {
+      return store.getters.parks;
+    }
   }
 };
 </script>
