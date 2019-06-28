@@ -53,8 +53,23 @@ const userModule = {
 
 const parkModule = {
     state: {
+        parks :[{
         id: "250025",
-        name: "Park",
+        name: "Park 1",
+        level: 2,
+        address: "Reykjavikplein 1",
+        treeTotal: 3,
+        creationDate: "06-28-2019",
+        lastUpdated: "06-28-2019",
+        facilities: {
+            toilet: true,
+            restaurant: true,
+            playground: true,
+            fountain: false
+        }
+    },{
+        id: "250026",
+        name: "Park 2",
         level: 2,
         address: "Reykjavikplein 2",
         treeTotal: 3,
@@ -66,19 +81,35 @@ const parkModule = {
             playground: true,
             fountain: false
         }
-    },
+    },{
+        id: "250027",
+        name: "Park 3",
+        level: 2,
+        address: "Reykjavikplein 3",
+        treeTotal: 3,
+        creationDate: "06-28-2019",
+        lastUpdated: "06-28-2019",
+        facilities: {
+            toilet: true,
+            restaurant: true,
+            playground: true,
+            fountain: false
+        }
+    }]},
     mutations: {
-        incrementTrees(state) {
-            state.treeTotal++;
+        incrementTrees(index) {
+            this.state[index].treeTotal++;
         }
     },
     actions: {},
-    getters: {}
+    getters: {
+        parks: state => state.parks
+    }
 }
 
 export const store = new Vuex.Store({
     modules: {
         user: userModule,
-        park: parkModule
+        parks: parkModule
     }
 })
