@@ -10,10 +10,10 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import { store } from "../store";
 import Park from "./Park.vue";
+
 export default {
   name: "ParkList",
   data: () => {
@@ -31,3 +31,15 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+ul {
+  list-style: none;
+  li {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+</style>

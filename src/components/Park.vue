@@ -21,8 +21,6 @@ export default {
       return this.$route.params.id;
     },
     park() {
-      console.log(store.getters.park(this.index).facilities);
-      
       return store.getters.park(this.index);
     }
   }

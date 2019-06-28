@@ -26,7 +26,6 @@ export default {
   methods: {
     submitDonation: function(amount) {
       alert(`Thank you for donating!`);
-      console.log(amount);
     },
     getUser: function() {
       this.user = store.getters.user

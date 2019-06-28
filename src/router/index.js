@@ -11,9 +11,7 @@ Vue.use(Router);
 const routes = [
   {path: '/donation', name:'donation', component: Donation},
   {path: '/park/:id', name:'park', component: Park},
-  {path: '/parklist', name:'parklist', component: ParkList},
   {path: '/stats', name:'stats', component: Stats},
-  {path: '', redirect: '/parklist'}
 ]
 
 export default new Router({
