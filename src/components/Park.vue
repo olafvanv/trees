@@ -1,13 +1,20 @@
 <template>
   <div>
-    <div class="facilities" v-for="(value, name) in park.facilities" v-bind:key="name" v-if="value">
+    <span
+      class="facilities"
+      v-for="(value, name) in park.facilities"
+      v-bind:key="name"
+      v-if="value"
+    >
       <!-- <img :src="getImg(name)" alt> -->
       <img v-if="name==='toilet'" src="../assets/toilet.png" alt>
       <img v-if="name==='restaurant'" src="../assets/restaurant.jpg" alt>
       <img v-if="name==='fountain'" src="../assets/fountain.png" alt>
       <img v-if="name==='playground'" src="../assets/playground.jpg" alt>
+    </span>
+    <div>
+      <img src="../assets/park.png" alt>
     </div>
-    <img src="../assets/park.png" alt>
   </div>
 </template>
 
@@ -35,9 +42,12 @@ export default {
 };
 </script>
 
-<style scoped>
-.facilities img {
+<style lang="scss" scoped>
+.facilities {
+  margin-right: 10px;
+  img {
     width: 50px;
     height: 50px;
+  }
 }
 </style>
