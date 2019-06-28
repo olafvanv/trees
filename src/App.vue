@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <park-list></park-list>
     <div class="menu">
       <router-link to="/donation" tag="button">Donation</router-link>
     </div>
@@ -8,14 +9,12 @@
 </template>
 
 <script>
-import Park from './components/Park.vue'
 import ParkList from './components/ParkList.vue'
-import Donation from './components/Donation.vue'
 
 export default {
   name: 'app',
   components: {
-    Donation
+    ParkList
   }
 }
 </script>

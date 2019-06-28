@@ -1,18 +1,25 @@
 <template>
   <div>
-    <ul id="example-1">
-      <li v-for="park in parks">{{park}}</li>
+    <ul>
+      <li v-bind:key="park" v-for="park in parks" v-on:click="getParks">{{park}}</li>
     </ul>
   </div>
 </template>
 
 
 <script lang="ts">
-import Vue from "vue";
-export default Vue.extend({
-  el: "#example-1",
-  data: {
-    parks: ["1", "2", "1"]
+export default {
+  name: "ParkList",
+  data: () => {
+    return {
+      parks: ["1", "2", "1"]
+    };
+  },
+  methods: {
+    getParks: function() {}
+  },
+  mounted: function() {
+    this.getParks();
   }
-});
+};
 </script>
