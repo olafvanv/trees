@@ -90,7 +90,7 @@ export default {
       this.loading = false;
     });
   }
-};
+}
 </script>
 <style>
 .card-img-top {
