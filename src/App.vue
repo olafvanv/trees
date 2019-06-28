@@ -1,22 +1,20 @@
 <template>
   <div id="app">
-    <ParkList />
     <div class="menu">
       <router-link to="/donation" tag="button">Donation</router-link>
+      <router-link to="/stats" tag="button">Stats</router-link>
     </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ParkList from './components/ParkList.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   name: 'app',
   components: {
-    ParkList
   }
 }
 </script>
