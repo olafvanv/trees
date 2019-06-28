@@ -73,13 +73,7 @@ const parkModule = {
         }
     },
     actions: {},
-    getters: {
-        flightDistance: state => state.egencia.flightDistance,
-        flightPollution: state => state.egencia.flightDistance * 115,
-        mobilityDistance: state => state.mobilityConcept.distance,
-        mobilityPollution: state => state.mobilityConcept.pollution,
-        plantedTrees: state => state.plantedTrees
-    }
+    getters: {}
 }
 
 export const store = new Vuex.Store({
