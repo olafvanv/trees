@@ -35,11 +35,11 @@ const userModule = {
         }
     },
     actions: {
-        fetchPosts ({commit}) {
-            return client
-            .fetchPosts()
-            .then(user => commit('setUser', user))
-        }
+        // fetchPosts ({commit}) {
+        //     return client
+        //     .fetchPosts()
+        //     .then(user => commit('setUser', user))
+        // }
     },
     getters: {
         user: state => state.user,
