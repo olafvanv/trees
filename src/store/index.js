@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import client from 'api-client'
+import client from 'api-client'
 
 Vue.use(Vuex)
 
@@ -35,11 +35,11 @@ const userModule = {
         }
     },
     actions: {
-        // fetchPosts ({commit}) {
-        //     return client
-        //     .fetchPosts()
-        //     .then(user => commit('setUser', user))
-        // }
+        fetchUser ({commit}) {
+            return client
+            .fetchUser()
+            .then(user => commit('setUser', user))
+        }
     },
     getters: {
         user: state => state.user,
