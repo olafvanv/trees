@@ -1,0 +1,13 @@
+{
+    "id": "250025",
+    "name": "Gabriel Moawad",
+    "pollution": {
+        "mobilityConcept": {
+            "distance": 899000,
+            "pollution": 17600 
+        },
+        "egencia": {
+            "flightDistance": 899000
+        }
+    }
+}
